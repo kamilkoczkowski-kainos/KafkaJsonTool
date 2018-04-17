@@ -50,7 +50,7 @@ object KafkaWriter extends App {
       val json = ("customer" -> ("customer_id" -> customer_id)~("customer_fname" -> customer_fname)~("customer_lname" -> customer_lname)~("customer_email"->customer_email)~("customer_password"->customer_password)~("customer_street"->customer_street)~("customer_city"->customer_city)~("customer_state"->customer_state)~("customer_zipcode"->customer_zipcode))
       println(json)
 
-      producer.send(KafkaProducerRecord("customers", Some("customer"), prettyRender(json)))
+      producer.send(KafkaProducerRecord("test", Some("customer"), prettyRender(json)))
 
     }
   producer.close()
